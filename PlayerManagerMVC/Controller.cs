@@ -49,7 +49,7 @@ namespace PlayerManagerMVC
                         InsertPlayer();
                         break;
                     case "2":
-                        ListPlayers(list.playerList);
+                        ListPlayers(list.List);
                         break;
                     case "3":
                         ListPlayersWithScoreGreaterThan();
@@ -109,7 +109,7 @@ namespace PlayerManagerMVC
 
             // Create new player and add it to list
             newPlayer = new Player(name, score);
-            playerList.Add(newPlayer);
+            list.List.Add(newPlayer);
         }
 
         /// <summary>
@@ -166,7 +166,7 @@ namespace PlayerManagerMVC
         private IEnumerable<Player> GetPlayersWithScoreGreaterThan(int minScore)
         {
             // Cycle all players in the original player list
-            foreach (Player p in playerList)
+            foreach (Player p in list.List)
             {
                 // If the current player has a score higher than the
                 // given value....
@@ -201,13 +201,13 @@ namespace PlayerManagerMVC
             switch (playerOrder)
             {
                 case PlayerOrder.ByScore:
-                    playerList.Sort();
+                    list.List.Sort();
                     break;
                 case PlayerOrder.ByName:
-                    playerList.Sort(compareByName);
+                    list.List.Sort(compareByName);
                     break;
                 case PlayerOrder.ByNameReverse:
-                    playerList.Sort(compareByNameReverse);
+                    list.List.Sort(compareByNameReverse);
                     break;
                 default:
                     Console.Error.WriteLine("\n>>> Unknown player order! <<<\n");
