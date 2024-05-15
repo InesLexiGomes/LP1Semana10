@@ -64,7 +64,7 @@ namespace PlayerManagerMVC
                         break;
                 }
 
-                view.AfterMenu();
+                if (option != 0) view.AfterMenu();
 
                 // Loop keeps going until players choses to quit (option 4)
             } while (option != 0);
