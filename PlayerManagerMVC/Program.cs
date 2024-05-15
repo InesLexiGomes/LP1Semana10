@@ -19,7 +19,7 @@ namespace PlayerManagerMVC
             // Create a new instance of the View class
             SillyView view= new SillyView(controller, list.List);
             // Start the program instance
-            controller.Start();
+            controller.Start(view);
         }
 
     }

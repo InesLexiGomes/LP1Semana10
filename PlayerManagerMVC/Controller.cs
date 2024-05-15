@@ -29,7 +29,7 @@ namespace PlayerManagerMVC
         /// <summary>
         /// Start the player listing program instance
         /// </summary>
-        public void Start()
+        public void Start(IView view)
         {
             // We keep the user's option here
             string option;
