@@ -38,7 +38,7 @@ namespace PlayerManagerMVC
             do
             {
                 // Show menu and get user option
-                ShowMenu();
+                view.ShowMenu();
                 option = Console.ReadLine();
 
                 // Determine the option specified by the user and act on it
@@ -72,21 +72,6 @@ namespace PlayerManagerMVC
 
                 // Loop keeps going until players choses to quit (option 4)
             } while (option != "0");
-        }
-
-        /// <summary>
-        /// Shows the main menu.
-        /// </summary>
-        private void ShowMenu()
-        {
-            Console.WriteLine("Menu");
-            Console.WriteLine("----\n");
-            Console.WriteLine("1. Insert player");
-            Console.WriteLine("2. List all players");
-            Console.WriteLine("3. List players with score greater than");
-            Console.WriteLine("4. Sort players");
-            Console.WriteLine("0. Quit\n");
-            Console.Write("Your choice > ");
         }
 
         /// <summary>
