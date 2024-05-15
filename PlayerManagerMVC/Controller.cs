@@ -48,10 +48,10 @@ namespace PlayerManagerMVC
                         InsertPlayer(view.InsertPlayer());
                         break;
                     case 2:
-                        ListPlayers(list.List);
+                        view.ListPlayers(list.List);
                         break;
                     case 3:
-                        ListPlayersWithScoreGreaterThan();
+                        ListPlayersWithScoreGreaterThan(view);
                         break;
                     case 4:
                         SortPlayerList();
@@ -79,31 +79,9 @@ namespace PlayerManagerMVC
         }
 
         /// <summary>
-        /// Show all players in a list of players. This method can be static
-        /// because it doesn't depend on anything associated with an instance
-        /// of the program. Namely, the list of players is given as a parameter
-        /// to this method.
-        /// </summary>
-        /// <param name="playersToList">
-        /// An enumerable object of players to show.
-        /// </param>
-        private static void ListPlayers(IEnumerable<Player> playersToList)
-        {
-            Console.WriteLine("\nList of players");
-            Console.WriteLine("-------------\n");
-
-            // Show each player in the enumerable object
-            foreach (Player p in playersToList)
-            {
-                Console.WriteLine($" -> {p.Name} with a score of {p.Score}");
-            }
-            Console.WriteLine();
-        }
-
-        /// <summary>
         /// Show all players with a score higher than a user-specified value.
         /// </summary>
-        private void ListPlayersWithScoreGreaterThan()
+        private void ListPlayersWithScoreGreaterThan(IView view)
         {
             // Minimum score user should have in order to be shown
             int minScore;
@@ -119,7 +97,7 @@ namespace PlayerManagerMVC
                 GetPlayersWithScoreGreaterThan(minScore);
 
             // List all players with score higher than the user-specified value
-            ListPlayers(playersWithScoreGreaterThan);
+            view.ListPlayers(playersWithScoreGreaterThan);
         }
 
         /// <summary>

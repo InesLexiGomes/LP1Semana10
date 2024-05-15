@@ -12,5 +12,6 @@ namespace PlayerManagerMVC
         void InvalidOption();
         void AfterMenu();
         Player InsertPlayer();
+        void ListPlayers(IEnumerable<Player> playersToList);
     }
 }
