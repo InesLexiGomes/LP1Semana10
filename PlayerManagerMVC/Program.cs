@@ -16,6 +16,8 @@ namespace PlayerManagerMVC
             PlayerList list = new PlayerList();
             // Create a new instance of the player listing program
             Controller controller = new Controller(list);
+            // Create a new instance of the View class
+            SillyView view= new SillyView(controller, list.List);
             // Start the program instance
             controller.Start();
         }
