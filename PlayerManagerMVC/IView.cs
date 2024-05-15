@@ -8,5 +8,7 @@ namespace PlayerManagerMVC
     public interface IView
     {
         int ShowMenu();
+
+        void EndMessage();
     }
 }

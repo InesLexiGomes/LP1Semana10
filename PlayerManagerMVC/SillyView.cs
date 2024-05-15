@@ -31,5 +31,10 @@ namespace PlayerManagerMVC
             return Int32.Parse(Console.ReadLine());
 
         }
+
+        public void EndMessage()
+        {
+            Console.WriteLine("Bye!");
+        }
     }
 }
