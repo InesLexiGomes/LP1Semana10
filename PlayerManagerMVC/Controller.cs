@@ -18,21 +18,9 @@ namespace PlayerManagerMVC
         private readonly IComparer<Player> compareByNameReverse;
 
         /// <summary>
-        /// Program begins here.
-        /// </summary>
-        /// <param name="args">Not used.</param>
-        private static void Main(string[] args)
-        {
-            // Create a new instance of the player listing program
-            Controller prog = new Controller();
-            // Start the program instance
-            prog.Start();
-        }
-
-        /// <summary>
         /// Creates a new instance of the player listing program.
         /// </summary>
-        private Controller()
+        public Controller()
         {
             // Initialize player comparers
             compareByName = new CompareByName(true);
@@ -49,7 +37,7 @@ namespace PlayerManagerMVC
         /// <summary>
         /// Start the player listing program instance
         /// </summary>
-        private void Start()
+        public void Start()
         {
             // We keep the user's option here
             string option;
