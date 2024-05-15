@@ -88,5 +88,12 @@ namespace PlayerManagerMVC
             }
             Console.WriteLine();
         }
+
+        public int AskForMinimumScore()
+        {
+            // Ask the user what is the minimum score
+            Console.Write("\nMinimum score player should have? ");
+            return Convert.ToInt32(Console.ReadLine());
+        }
     }
 }

@@ -13,5 +13,6 @@ namespace PlayerManagerMVC
         void AfterMenu();
         Player InsertPlayer();
         void ListPlayers(IEnumerable<Player> playersToList);
+        int AskForMinimumScore();
     }
 }
