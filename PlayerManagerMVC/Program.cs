@@ -14,9 +14,9 @@ namespace PlayerManagerMVC
         private static void Main(string[] args)
         {
             // Create a new instance of the player listing program
-            Controller prog = new Controller();
+            Controller controller = new Controller();
             // Start the program instance
-            prog.Start();
+            controller.Start();
         }
 
     }
