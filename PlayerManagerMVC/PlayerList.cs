@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace PlayerManagerMVC
 {
-    public class Model
+    public class PlayerList
     {        
 
         // Initialize the player list with two players using collection

@@ -12,7 +12,8 @@ namespace PlayerManagerMVC
         /// </summary>
         /// <param name="args">Not used.</param>
         private static void Main(string[] args)
-        {
+        {   // Create the model
+            PlayerList list = new PlayerList();
             // Create a new instance of the player listing program
             Controller controller = new Controller();
             // Start the program instance
