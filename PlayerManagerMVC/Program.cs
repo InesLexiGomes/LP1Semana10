@@ -15,7 +15,7 @@ namespace PlayerManagerMVC
         {   // Create the model
             PlayerList list = new PlayerList();
             // Create a new instance of the player listing program
-            Controller controller = new Controller();
+            Controller controller = new Controller(list);
             // Start the program instance
             controller.Start();
         }

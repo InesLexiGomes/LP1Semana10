@@ -8,6 +8,7 @@ namespace PlayerManagerMVC
     /// </summary>
     public class Controller
     {
+        private readonly PlayerList list;
         // Comparer for comparing player by name (alphabetical order)
         private readonly IComparer<Player> compareByName;
 
@@ -17,8 +18,9 @@ namespace PlayerManagerMVC
         /// <summary>
         /// Creates a new instance of the player listing program.
         /// </summary>
-        public Controller()
+        public Controller(PlayerList list)
         {
+            this.list = list;
             // Initialize player comparers
             compareByName = new CompareByName(true);
             compareByNameReverse = new CompareByName(false);
@@ -47,7 +49,7 @@ namespace PlayerManagerMVC
                         InsertPlayer();
                         break;
                     case "2":
-                        ListPlayers(playerList);
+                        ListPlayers(list.playerList);
                         break;
                     case "3":
                         ListPlayersWithScoreGreaterThan();
