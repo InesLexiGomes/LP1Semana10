@@ -8,7 +8,7 @@ namespace PlayerManagerMVC
     /// </summary>
     public class Controller
     {
-        private readonly PlayerList list;
+        private readonly List<Player> list;
         // Comparer for comparing player by name (alphabetical order)
         private readonly IComparer<Player> compareByName;
 
@@ -18,7 +18,7 @@ namespace PlayerManagerMVC
         /// <summary>
         /// Creates a new instance of the player listing program.
         /// </summary>
-        public Controller(PlayerList list)
+        public Controller(List<Player> list)
         {
             this.list = list;
             // Initialize player comparers
@@ -45,10 +45,10 @@ namespace PlayerManagerMVC
                 {
                     case 1:
                         // Insert player
-                        list.List.Add(view.InsertPlayer());
+                        list.Add(view.InsertPlayer());
                         break;
                     case 2:
-                        view.ListPlayers(list.List);
+                        view.ListPlayers(list);
                         break;
                     case 3:
                         ListPlayersWithScoreGreaterThan(view);
@@ -100,7 +100,7 @@ namespace PlayerManagerMVC
         private IEnumerable<Player> GetPlayersWithScoreGreaterThan(int minScore)
         {
             // Cycle all players in the original player list
-            foreach (Player p in list.List)
+            foreach (Player p in list)
             {
                 // If the current player has a score higher than the
                 // given value....
@@ -122,16 +122,16 @@ namespace PlayerManagerMVC
             switch (playerOrder)
             {
                 case PlayerOrder.ByScore:
-                    list.List.Sort();
+                    list.Sort();
                     break;
                 case PlayerOrder.ByName:
-                    list.List.Sort(compareByName);
+                    list.Sort(compareByName);
                     break;
                 case PlayerOrder.ByNameReverse:
-                    list.List.Sort(compareByNameReverse);
+                    list.Sort(compareByNameReverse);
                     break;
                 default:
-                    Console.Error.WriteLine("\n>>> Unknown player order! <<<\n");
+                    view.InvalidOption();
                     break;
             }
         }
