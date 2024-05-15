@@ -54,7 +54,7 @@ namespace PlayerManagerMVC
                         ListPlayersWithScoreGreaterThan(view);
                         break;
                     case 4:
-                        SortPlayerList();
+                        SortPlayerList(view);
                         break;
                     case 0:
                         view.EndMessage();
@@ -115,22 +115,9 @@ namespace PlayerManagerMVC
         /// <summary>
         ///  Sort player list by the order specified by the user.
         /// </summary>
-        private void SortPlayerList()
+        private void SortPlayerList(IView view)
         {
-            PlayerOrder playerOrder;
-
-            Console.WriteLine("Player order");
-            Console.WriteLine("------------");
-            Console.WriteLine(
-                $"{(int)PlayerOrder.ByScore}. Order by score");
-            Console.WriteLine(
-                $"{(int)PlayerOrder.ByName}. Order by name");
-            Console.WriteLine(
-                $"{(int)PlayerOrder.ByNameReverse}. Order by name (reverse)");
-            Console.WriteLine("");
-            Console.Write("> ");
-
-            playerOrder = Enum.Parse<PlayerOrder>(Console.ReadLine());
+            PlayerOrder playerOrder = view.AskForPlayerOrder();
 
             switch (playerOrder)
             {

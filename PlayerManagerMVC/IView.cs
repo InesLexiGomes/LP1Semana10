@@ -14,5 +14,6 @@ namespace PlayerManagerMVC
         Player InsertPlayer();
         void ListPlayers(IEnumerable<Player> playersToList);
         int AskForMinimumScore();
+        PlayerOrder AskForPlayerOrder();
     }
 }
