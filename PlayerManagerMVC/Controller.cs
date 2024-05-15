@@ -8,9 +8,6 @@ namespace PlayerManagerMVC
     /// </summary>
     public class Controller
     {
-        /// The list of all players
-        private readonly List<Player> playerList;
-
         // Comparer for comparing player by name (alphabetical order)
         private readonly IComparer<Player> compareByName;
 
@@ -25,13 +22,6 @@ namespace PlayerManagerMVC
             // Initialize player comparers
             compareByName = new CompareByName(true);
             compareByNameReverse = new CompareByName(false);
-
-            // Initialize the player list with two players using collection
-            // initialization syntax
-            playerList = new List<Player>() {
-                new Player("Best player ever", 100),
-                new Player("An even better player", 500)
-            };
         }
 
         /// <summary>
