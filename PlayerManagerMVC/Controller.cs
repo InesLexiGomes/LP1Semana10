@@ -45,7 +45,7 @@ namespace PlayerManagerMVC
                 {
                     case 1:
                         // Insert player
-                        InsertPlayer(view.InsertPlayer());
+                        list.List.Add(view.InsertPlayer());
                         break;
                     case 2:
                         view.ListPlayers(list.List);
@@ -68,14 +68,6 @@ namespace PlayerManagerMVC
 
                 // Loop keeps going until players choses to quit (option 4)
             } while (option != 0);
-        }
-
-        /// <summary>
-        /// Inserts a new player in the player list.
-        /// </summary>
-        private void InsertPlayer(Player newPlayer)
-        {
-            list.List.Add(newPlayer);
         }
 
         /// <summary>
