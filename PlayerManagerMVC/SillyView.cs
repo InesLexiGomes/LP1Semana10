@@ -41,5 +41,12 @@ namespace PlayerManagerMVC
             Console.Error.WriteLine("\n>>> Unknown option! <<<\n");
 
         }
+        public void AfterMenu()
+        {
+                // Wait for user to press a key...
+                Console.Write("\nPress any key to continue...");
+                Console.ReadKey(true);
+                Console.WriteLine("\n");
+        }
     }
 }

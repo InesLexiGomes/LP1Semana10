@@ -10,5 +10,6 @@ namespace PlayerManagerMVC
         int ShowMenu();
         void EndMessage();
         void InvalidOption();
+        void AfterMenu();
     }
 }
