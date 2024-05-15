@@ -57,10 +57,10 @@ namespace PlayerManagerMVC
                         SortPlayerList();
                         break;
                     case 0:
-                        Console.WriteLine("Bye!");
+                        view.EndMessage();
                         break;
                     default:
-                        Console.Error.WriteLine("\n>>> Unknown option! <<<\n");
+                        view.InvalidOption();
                         break;
                 }
 
