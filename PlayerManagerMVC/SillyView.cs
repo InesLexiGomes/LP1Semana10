@@ -36,5 +36,10 @@ namespace PlayerManagerMVC
         {
             Console.WriteLine("Bye!");
         }
+        public void InvalidOption()
+        {
+            Console.Error.WriteLine("\n>>> Unknown option! <<<\n");
+
+        }
     }
 }
