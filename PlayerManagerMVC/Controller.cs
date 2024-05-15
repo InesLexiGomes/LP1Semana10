@@ -32,32 +32,31 @@ namespace PlayerManagerMVC
         public void Start(IView view)
         {
             // We keep the user's option here
-            string option;
+            int option;
 
             // Main program loop
             do
             {
                 // Show menu and get user option
-                view.ShowMenu();
-                option = Console.ReadLine();
+                option = view.ShowMenu();
 
                 // Determine the option specified by the user and act on it
                 switch (option)
                 {
-                    case "1":
+                    case 1:
                         // Insert player
                         InsertPlayer();
                         break;
-                    case "2":
+                    case 2:
                         ListPlayers(list.List);
                         break;
-                    case "3":
+                    case 3:
                         ListPlayersWithScoreGreaterThan();
                         break;
-                    case "4":
+                    case 4:
                         SortPlayerList();
                         break;
-                    case "0":
+                    case 0:
                         Console.WriteLine("Bye!");
                         break;
                     default:
@@ -71,7 +70,7 @@ namespace PlayerManagerMVC
                 Console.WriteLine("\n");
 
                 // Loop keeps going until players choses to quit (option 4)
-            } while (option != "0");
+            } while (option != 0);
         }
 
         /// <summary>

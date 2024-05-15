@@ -18,7 +18,7 @@ namespace PlayerManagerMVC
         /// <summary>
         /// Shows the main menu.
         /// </summary>
-        public void ShowMenu()
+        public int ShowMenu()
         {
             Console.WriteLine("Menu");
             Console.WriteLine("----\n");
@@ -28,6 +28,8 @@ namespace PlayerManagerMVC
             Console.WriteLine("4. Sort players");
             Console.WriteLine("0. Quit\n");
             Console.Write("Your choice > ");
+            return Int32.Parse(Console.ReadLine());
+
         }
     }
 }

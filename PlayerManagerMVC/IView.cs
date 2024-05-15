@@ -7,6 +7,6 @@ namespace PlayerManagerMVC
 {
     public interface IView
     {
-        void ShowMenu();
+        int ShowMenu();
     }
 }
