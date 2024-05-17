@@ -4,18 +4,18 @@ namespace GuessTheNumber
 {
     public class Controller
     {
+        private int targetNumber;
+        private int guess;
+        private bool guessedCorrectly;
+        private int attempts;
+        public Controller(int targetNumber, bool guessedCorrectly, int attempts)
+        {
+            this.targetNumber = targetNumber;
+            this.guessedCorrectly = guessedCorrectly;
+            this.attempts = attempts;
+        }
         public void Start(IView view)
         {
-            // Generate a random number
-            Random random = new Random();
-
-            // Generate a number between 1 and 100
-            int targetNumber = random.Next(1, 101);
-
-            int guess;
-            int attempts = 0;
-            bool guessedCorrectly = false;
-
             view.Instructions();
 
             // Game loop
