@@ -21,8 +21,7 @@ namespace GuessTheNumber
             // Game loop
             while (!guessedCorrectly)
             {
-                Console.Write("Take a guess: ");
-                guess = Convert.ToInt32(Console.ReadLine());
+                guess = view.Guess();
                 attempts++;
 
                 if (guess == targetNumber)
@@ -31,11 +30,11 @@ namespace GuessTheNumber
                 }
                 else if (guess < targetNumber)
                 {
-                    Console.WriteLine("Too low! Try again.");
+                    view.TooLow();
                 }
                 else
                 {
-                    Console.WriteLine("Too high! Try again.");
+                    view.TooHigh();
                 }
             }
 

@@ -19,13 +19,27 @@ namespace GuessTheNumber
         /// <returns></returns>
         public bool GuessCorrectly(int attempts)
         {
-            Console.WriteLine("Congratulations! You guessed the number correctly!");
+            Console.WriteLine("Congratulations! You guessed correctly!");
             Console.WriteLine($"Number of attempts: {attempts}");
             return true;
         }
         public void Thank()
         {
             Console.WriteLine("Thank you for playing Guess the Number!");
+        }
+
+        public int Guess()
+        {
+            Console.Write("Take a guess: ");
+            return Convert.ToInt32(Console.ReadLine());
+        }
+        public void TooHigh()
+        {
+            Console.WriteLine("Too high! Try again.");
+        }
+        public void TooLow()
+        {
+            Console.WriteLine("Too low! Try again.");
         }
      }
 }
