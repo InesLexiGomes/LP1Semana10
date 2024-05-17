@@ -5,7 +5,7 @@ namespace GuessTheNumber
     public interface IView
     {
         void Instructions();
-        void GuessCorrectly();
+        bool GuessCorrectly();
         void Thank();
     }
 }
