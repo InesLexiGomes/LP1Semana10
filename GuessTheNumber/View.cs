@@ -25,7 +25,7 @@ namespace GuessTheNumber
         }
         public void Thank()
         {
-
+            Console.WriteLine("Thank you for playing Guess the Number!");
         }
      }
 }
