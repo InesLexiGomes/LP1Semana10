@@ -4,7 +4,7 @@ namespace GuessTheNumber
 {
     public class Controller
     {
-        private static void Main()
+        public void Start(IView view)
         {
             // Generate a random number
             Random random = new Random();
@@ -16,8 +16,7 @@ namespace GuessTheNumber
             int attempts = 0;
             bool guessedCorrectly = false;
 
-            Console.WriteLine("Welcome to Guess the Number!");
-            Console.WriteLine("I have chosen a number between 1 and 100.");
+            view.Instructions();
 
             // Game loop
             while (!guessedCorrectly)
@@ -28,10 +27,7 @@ namespace GuessTheNumber
 
                 if (guess == targetNumber)
                 {
-                    Console.WriteLine(
-                        "Congratulations! You guessed the number correctly!");
-                    Console.WriteLine("Number of attempts: " + attempts);
-                    guessedCorrectly = true;
+                    guessedCorrectly = view.GuessCorrectly(attempts);
                 }
                 else if (guess < targetNumber)
                 {
